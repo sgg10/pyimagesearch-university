@@ -8,6 +8,7 @@ click = "*"
 opencv-python = "*"
 matplotlib = "*"
 numpy = "*"
+imutils = "*"
 
 [dev-packages]
 
