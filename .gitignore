@@ -129,8 +129,10 @@ dmypy.json
 .pyre/
 
 # Media
-*.jpg
+*.jp*g
 *.png
+!assets/imgs/ac.jpg
+!slicing.jpeg
 
 # IDEs
 .idea
