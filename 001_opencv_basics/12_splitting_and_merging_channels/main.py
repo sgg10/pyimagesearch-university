@@ -1,7 +1,6 @@
 import cv2
 import click
 import numpy as np
-from cv2 import Mat
 
 
 @click.command()
