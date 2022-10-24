@@ -12,38 +12,38 @@ def clear(image):
 @click.option('-e', '--env', type=click.Choice(["script", "jupyter"]))
 def main(image, env):
     image = cv2.imread(image)
-    # cv2.imshow("Original", image)
-    # kernel_sizes = [(3, 3), (9, 9), (15, 15), (80, 80), (150,150)]
-    # # kernel_sizes = [(80, 9), (9, 80)]
+    cv2.imshow("Original", image)
+    kernel_sizes = [(3, 3), (9, 9), (15, 15), (80, 80), (150,150)]
+    # kernel_sizes = [(80, 9), (9, 80)]
 
-    # # Loop over the kernel sizes
-    # for kX, kY in kernel_sizes:
-    #     # Apply an "average" blur to the image using the current kernel size
-    #     blurred = cv2.blur(image, (kX, kY))
-    #     cv2.imshow(f"Average ({kX}, {kY})", blurred)
-    #     cv2.waitKey(0)
+    # Loop over the kernel sizes
+    for kX, kY in kernel_sizes:
+        # Apply an "average" blur to the image using the current kernel size
+        blurred = cv2.blur(image, (kX, kY))
+        cv2.imshow(f"Average ({kX}, {kY})", blurred)
+        cv2.waitKey(0)
 
-    # clear(image)
+    clear(image)
 
-    # # Loop over the kernel sizes and apply a "Gaussian" blur to the image using each kernel size
-    # for kX, kY in kernel_sizes:
-    #     try:
-    #         blurred = cv2.GaussianBlur(image, (kX, kY), 0)
-    #         cv2.imshow(f"Gaussian ({kX}, {kY})", blurred)
-    #         cv2.waitKey(0)
-    #     except:
-    #         continue
+    # Loop over the kernel sizes and apply a "Gaussian" blur to the image using each kernel size
+    for kX, kY in kernel_sizes:
+        try:
+            blurred = cv2.GaussianBlur(image, (kX, kY), 0)
+            cv2.imshow(f"Gaussian ({kX}, {kY})", blurred)
+            cv2.waitKey(0)
+        except:
+            continue
 
-    # clear(image)
+    clear(image)
 
-    # # Loop over the kernel sizes and apply a "median" blur to the image using each kernel size
-    # for k, _ in kernel_sizes:
-    #     try:
-    #         blurred = cv2.medianBlur(image, k)
-    #         cv2.imshow(f"Median ({k})", blurred)
-    #         cv2.waitKey(0)
-    #     except:
-    #         continue
+    # Loop over the kernel sizes and apply a "median" blur to the image using each kernel size
+    for k, _ in kernel_sizes:
+        try:
+            blurred = cv2.medianBlur(image, k)
+            cv2.imshow(f"Median ({k})", blurred)
+            cv2.waitKey(0)
+        except:
+            continue
 
     clear(image)
 
